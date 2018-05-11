@@ -48,17 +48,14 @@
 			$('#'+containerID).css('background-color','#ffffff');
 			var canvas = document.getElementById('main_canvas');
 			var ctx = canvas.getContext('2d');
-
 //*
 			var repeats = 6;
-
 			var predelaytime = 5000;
 			var predelaytext = "Be ready it will start shortly";
 			var postdelaytime = 25000;
 			var postdelaytext = "Relax for a while.";
 			var timelimit = 30000;
 /*/
-
 			var repeats = 2;
 			var predelaytime = 2000;
 			var predelaytext = "Be ready it will start shortly";
@@ -66,7 +63,6 @@
 			var postdelaytext = "Relax for a while.";
 			var timelimit = 5000;
 //*/
-
 			var repeat = 0
 
 			var sequence = ['4', '1', '3', '2', '4'];
@@ -91,7 +87,6 @@
 			var sequenceMatch = null;
 
 			var repeatResults = {};
-
 			ctx.clearRect(0, 0, width, height);
 			ctx.fillStyle = 'rgb(0,0,255)';
 			ctx.textAlign = 'center';
@@ -161,7 +156,6 @@
 				intervals.push(setTimeout(ResetSequence, predelaytime));
 				intervals.push(setTimeout(Finish, predelaytime + timelimit));
 			}
-
 			var Finish = function()
 			{
 				if ($("#main_canvas").is(':hidden')) //hacky and ugly way :(
