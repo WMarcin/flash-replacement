@@ -90,12 +90,6 @@
 			ctx.clearRect(0, 0, width, height);
 			ctx.textAlign = 'center';
 
-			canvas.addEventListener('mousemove', function(event) {
-			  if (event.region) {
-				alert('ouch, my eye :(');
-			  }
-			});
-
 			var NextPair = function()
 			{
 				pair = pairs[Math.floor(Math.random() * pairs.length)];
