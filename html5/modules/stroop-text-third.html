@@ -1,5 +1,5 @@
 <div id=thirdparty_container__ID>
-	<div id=instructions class="container">
+	<div id=instructions__ID class="container">
 		<div class="row row__ID">
 			<div class="col-sm" >
 				This task measures reaction time to colours and words<br>
@@ -10,11 +10,11 @@
 				<p><i><b>If<font color="#FF0000" > GREEN </font>appears you would select the <u>green</u> box as shown</b></i></p>
 				Your responses will be timed.<br>
 				Accuracy is as important as speed in this task.<br>
-				To begin, please click on the <button id=start_button class='btn btn-primary btn-lg'>Start</button> button.
+				To begin, please click on the <button id=start_button__ID class='btn btn-primary btn-lg'>Start</button> button.
 			</div>
 		</div>
 	</div>
-	<canvas id=main_canvas width=600 height=300 style="margin: auto; display: block;"></canvas>
+	<canvas id=main_canvas__ID width=600 height=300 style="margin: auto; display: block;"></canvas>
 </div>
 <script>
 	function F__ID(){
@@ -53,10 +53,10 @@
 		}
 		//------------------------------------
 		var third_party=function(containerID,callback){
-			$('#instructions').show();
+			$('#instructions__ID').show();
 			ClearIntervals();
 			$('#'+containerID).css('background-color','#ffffff');
-			var canvas = document.getElementById('main_canvas');
+			var canvas = document.getElementById('main_canvas__ID');
 			var ctx = canvas.getContext('2d');
 			var names = ['RED', 'GREEN', 'BLUE'];
 			var colors = ['red', 'lime', 'blue'];
@@ -87,6 +87,7 @@
 			
 			var rects = [];
 
+			ctx.clearRect(0, 0, width, height);
 			ctx.textAlign = 'center';
 
 			canvas.addEventListener('mousemove', function(event) {
@@ -125,14 +126,14 @@
 
 			var Start = function()
 			{
-				if ($("#main_canvas").is(':hidden')) //hacky and ugly way :(
+				if ($("#main_canvas__ID").is(':hidden')) //hacky and ugly way :(
 					return;
 				intervals.push(setTimeout(Finish, timelimit));
 				NextPair();
 			}
 			var Finish = function()
 			{
-				if ($("#main_canvas").is(':hidden')) //hacky and ugly way :(
+				if ($("#main_canvas__ID").is(':hidden')) //hacky and ugly way :(
 					return;
 				currentSequence = 0;
 				ctx.clearRect(0, 0, width, height);
@@ -143,8 +144,8 @@
 				}
 			}
 
-			$('#start_button').on('click',function(){
-				$('#instructions').hide();
+			$('#start_button__ID').on('click',function(){
+				$('#instructions__ID').hide();
 				Start();
 			});
 
@@ -156,9 +157,9 @@
 				return {x:x, y:y}
 			}
 
-			$("#main_canvas").click(function(e)
+			$("#main_canvas__ID").click(function(e)
 			{
-				if ($("#main_canvas").is(':hidden')) //hacky and ugly way :(
+				if ($("#main_canvas__ID").is(':hidden')) //hacky and ugly way :(
 					return;
 				const XY = getXY(canvas, e)
 
@@ -177,9 +178,9 @@
 				}
 			});
 			
-			$("#main_canvas").mousemove(function(e)
+			$("#main_canvas__ID").mousemove(function(e)
 			{
-				if ($("#main_canvas").is(':hidden')) //hacky and ugly way :(
+				if ($("#main_canvas__ID").is(':hidden')) //hacky and ugly way :(
 					return;
 				const XY = getXY(canvas, e)
 
