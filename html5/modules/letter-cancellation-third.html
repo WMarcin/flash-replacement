@@ -400,6 +400,7 @@
 				current += practice ? 2 : 1;
 
 				{
+					$('.stop-button').hide();
 					var endTime = Date.now();
 					results.Time.push(timelimit == 0 ? endTime - startTime : timelimit);
 					results.Correct.push(correct);
